@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-xs-12 text-center">
+      <ul class="pagination pagination-lg">
+      {% for page in paginator.page_range %}
+      <li {% if page_obj.number == page %} class="active" {% endif%}><a href="?page={{ page }}{{ getvars }}">{{ page }}</a></li>
+      {% endfor %}
+      </ul>
+  </div>
+</div>

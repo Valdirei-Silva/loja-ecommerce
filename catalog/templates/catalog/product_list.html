@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load pagination %}
+{% load thumbnail %}
+{% block container %}
+<!-- Produtos -->
+<section id="produtos">
+  <div class="container">
+      <div class="row">
+      <div class="col-xs-12">
+          <div class="page-header"><h1>Produtos <small>Conheça Nossos Produtos</small></h1></div>
+      </div>
+      </div>
+        <div class="row">
+			<div class="col-xs-12">
+				<form class="form-group" action="{% url 'catalog:product_list' %}" method="get" >
+					<div class="col-sm-6 col-md-6 form-search">
+					<input type="text" name="search" class="form-control " placeholder="Pesquisar produto">
+					</div>
+					<button class="btn btn-primary" type="submit">Pesquisar</button>
+				</form>
+			</div>
+        </div>
+
+    <div class="row">
+    {% for product in product_list %}
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            {% if product.image %}
+            <img src="{{ product.image|thumbnail_url:'product_thumbnail' }}" class="img-responsive">
+            {% else %}
+            <img src="http://placehold.it/260x190" alt="" />
+            {% endif %}
+            <div class="caption">
+              <h4>{{ product.name }}</h4>
+              <p>{{ product.caption|linebreaks }}</p>
+              <h4><a href="{{ product.get_absolute_url }}">Detalhes</a></h4>
+              <h4 class="pull-left">R$ {{ product.price }}</h4>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+     <div class="row">
+         <div class="col-sm-12">
+            <div class="alert alert-info" role="alert">
+							Nenhum resultado foi encotrado.
+			</div>
+         </div>
+    </div>
+     {% endfor %}
+    </div>
+    {% pagination request paginator page_obj %}
+</div>
+</section>
+{% endblock %}

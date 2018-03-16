@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block container %}
+<body style="padding-top:50px;">
+<section id="slider">
+<div class="container">
+   <div class="row">
+       <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+           <div class="col-xs-12" id="horarioFuncionamento">
+               <p class="alert alert-info"><strong>Horário de Funcionamento</strong></p>
+               <p> Segunda a Sexta das 9:30 ás 18:00</p>
+               <p> Sábados das 9:30 ás 16:00</p>
+           </div>
+       <div class="col-xs-12" id="formaPagamento">
+           <p class="alert alert-info"><strong>Aceitamos todos os cartões de crédito</strong></p>
+           <p> Parcelamos em até 3X sem juros nas compras acima de R$ 300,00 Reais</p>
+           <p>Realizando pagameno a vista em dinheiro, ganhe 5% de desconto nas compras acima de R$ 100,00 Reais</p>
+       </div>
+
+           <div class="col-xs-12" id="midiasSociais">
+           <div class="row">
+               <div class="col-xs-6">
+               <img src="{% static 'assets/imgs/whatsapp.png' %}" alt="WhatsApp" width="50" height="50">
+               </div>
+
+           <div class="row">
+               <div class="col-xs-6">
+               <a href="https://www.facebook.com/iansadobalecom"><img src="{% static 'assets/imgs/facebook.png' %}" alt="FaceBook" width="40" height="40"></a>
+               </div>
+           </div>
+           </div>
+           <div class="row">
+               <div class="col-xs-12 text-left">
+               <p align="center"><strong>(11) 95174 6596 / iansadobalecom</strong></p>
+               </div>
+           </div>
+           </div>
+       </div>
+
+
+       <div class="col-xs-9 col-sm-9 col-md-9">
+           <div class="row carousel-slider">
+               <div class="col-xs-12">
+                   <div id="slider01" class="carousel slide" data-ride="carousel">
+                   <ol class="carousel-indicators">
+                       <li data-target="#slider01" data-slide-to="0" class="active"></li>
+                       <li data-target="#slider01" data-slide-to="1"></li>
+                       <li data-target="#slider01" data-slide-to="2"></li>
+                       <li data-target="#slider01" data-slide-to="3"></li>
+                   </ol>
+
+                   <div class="carousel-inner">
+                       <div class="item active">
+                       <img class="slide-image" src="imgs/especial_exu_1.jpg" alt="Ferramenta especial Exu">
+                       </div>
+                       <div class="item">
+                       <img class="slide-image" src="imgs/especial_exu_2.jpg" alt="Ferramenta especial Exu">
+                       </div>
+                       <div class="item">
+                       <img class="slide-image" src="imgs/especial_pombagira_1.jpg" alt="Ferramenta especial Pomba Gira">
+                       </div>
+                       <div class="item">
+                       <img class="slide-image" src="imgs/especial_pmbagira_2.jpg" alt="Ferramenta especial Pomba Gira">
+                       </div>
+                   </div>
+
+                       <a class="left carousel-control" href="#slider01" role="button" data-slide="prev">
+                       <span class="glyphicon glyphicon-chevron-left"></span>
+                       <span class="sr-only">Anterior</span>
+                       </a>
+
+                       <a class="right carousel-control" href="#slider01" role="button" data-slide="next">
+                       <span class="glyphicon glyphicon-chevron-right"></span>
+                       <span class="sr-only">Posterior</span>
+                       </a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="row contato" id="promocoes">
+        <div class="col-xs-12">
+        <div class="page-header"><h1>Promoções <small>da semana</small></h1></div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+        <div class="owl-carousel owl-theme owl-loaded">
+            {% for product in product_promotion %}
+            <div class="item">
+                <div class="thumbnail">
+                    {% if product.image %}
+                    <img src="{{ product.image|thumbnail_url:'product_thumbnail' }}" class="img-responsive">
+                    {% else %}
+                    <img src="http://placehold.it/260x190" alt="" />
+                    {% endif %}
+                    <div class="caption">
+                        <h4>{{ product.name }}</h4>
+                        <h4 class="pull-right">R$ {{ product.price }}</h4>
+                        <h4><a href="{{ product.get_absolute_url }}">Detalhes</a></h4>
+                        <p>{{ product.caption|linebreaks }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+</div>
+</section>
+</body>
+{% endblock %}

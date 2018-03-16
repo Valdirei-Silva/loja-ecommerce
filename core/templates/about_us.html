@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block container %}
+<section id="quemsomos">
+<div class="container">
+<div class="row">
+  <div class="col-xs-12">
+      <div class="page-header"><h1>Quem Somos <small>Conheça Nossa História</small></h1></div>
+  </div>
+</div>
+    <div class="row">
+    <div class="col-xs-6">
+        <img src="{% static 'assets/imgs/fachada.jpg' %}" class="img-responsive img-rounded" alt="Fachada">
+    </div>
+    <div class="col-xs-6">
+        <p><strong> A Iansã do Bale</strong>, atua no mercado de Artigos Religiosos, para Umbanda, Candomblé e Católicos à mais de 25 anos</p>
+        <p>Sempre com muito carinho, respeito e dedicação aos nossos clientes, oferecendo produtos de ótima qualidade e procedencia.</p>
+        <p>Muitos dos produtos que oferecemos, nós mesmos os confeccionamos, tais como: <br>
+            Ferramentas para assentamentos<br>
+            Panos de cabeça<br>
+            Barcos de madeira<br>
+            Paramentos, etc.<br>
+
+        </p>
+        <p><strong>Missão:</strong> Estar em constante melhoria, oferecer aos nossos clientes produtos de qualidade e preço justo </p>
+        <p><strong>Valores:</strong> Ética, respeito e transparência </p>
+    </div>
+    </div>
+</div>
+</section>
+{% endblock %}

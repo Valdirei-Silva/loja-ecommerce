@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block container %}
+<!-- Produto -->
+<section id="produto">
+<div class="container">
+    <div class="page-header">
+          <h1>Detalhes <small> do produto</h1></small>
+    </div>
+
+    <div class="row">
+          <div class="col-sm-4">
+              <a href="#" class="thumbnail">
+                  {% if product.image %}
+                  <img src="{{ product.image|thumbnail_url:'product_image' }}" class="img-responsive">
+                  {% else %}
+                  <img src="http://placehold.it/350x250" alt="" />
+                  {% endif %}
+              </a>
+          </div>
+          <div class="col-sm-8">
+              <h1> Informações do Produto </h1>
+              <h3> {{product.name}} </h3>
+              <p> {{product.description | linebreaks }} </p>
+              <h4 class="pull-left">R$ {{ product.price }}</h4>
+          </div>
+    </div>
+</div>
+</section>
+<!-- Fim - Produto -->
+{% endblock %}

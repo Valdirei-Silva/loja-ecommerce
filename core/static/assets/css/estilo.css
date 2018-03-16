@@ -1,0 +1,114 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+body{
+    padding-top: 10px;
+    background-color: #FFFACD;
+}
+
+
+section {
+    padding-top:28px;
+    padding-bottom:10px;
+    min-height:100vh;
+}
+
+footer{
+    background-color: #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+
+}
+
+
+.fonte_footer{
+ color: #FFFFFF;
+}
+
+section#contato{
+    min-height: 85vh;
+}
+
+section#produto{
+    min-height: 80vh;
+}
+
+.section_interna{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.carousel-slider{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: beige;
+	overflow: hidden;
+}
+
+.carousel-inner .item{
+    width:auto;
+	height: 480px;
+}
+
+.navbar{
+    height: 58px;
+}
+
+.page-header{
+    background-color: #A52A2A;
+}
+
+.contato textarea{
+    height: 170px;
+}
+.form-horizontal{
+	position: relative;
+}
+.contato .aviso{
+    padding: 15px;
+}
+
+.form-search{
+	margin-bottom: 10px;
+	padding-left: 0px;
+}
+
+.thumbnail .caption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 180px;
+
+}
+
+#promocoes{
+	padding-top: 10px;
+}
+
+div#horarioFuncionamento{
+background-color: white;
+padding-top: 10px;
+border: solid;
+border-color: #A52A2A;
+border-width: 1px;
+}
+
+div#formaPagamento{
+background-color: white;
+margin-top: 10px;
+padding-top: 10px;
+border: solid;
+border-color: #A52A2A;
+border-width: 1px;
+}
+
+div#midiasSociais{
+background-color: white;
+margin-top: 10px;
+padding-top: 10px;
+border: solid;
+border-color: #A52A2A;
+border-width: 1px;
+}
