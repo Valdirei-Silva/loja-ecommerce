@@ -6,6 +6,7 @@ from .forms import ContactForm
 from django.views.generic import View, TemplateView
 from django.views import generic
 from django.core.mail import send_mail
+from datetime import datetime
 
 from catalog.models import Category, Product
 
@@ -18,6 +19,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['product_promotion'] = Product.objects.filter(in_promotion='True')
         return context
+
 
 index = IndexView.as_view()
 
