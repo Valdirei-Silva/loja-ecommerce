@@ -30,8 +30,6 @@ DEBUG = config('DEBUG',default=False, cast=bool)
 ALLOWED_HOSTS = ['localhost', '.herokuapp.com', 'iansadobale.com.br']
 
 
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
