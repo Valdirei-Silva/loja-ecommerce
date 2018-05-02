@@ -19,6 +19,7 @@ design
 Include/
 Lib/
 Scripts/
+.env
 
 # Shared
 pyvenv.cfg
