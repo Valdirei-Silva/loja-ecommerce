@@ -4,7 +4,7 @@
 }
 
 body{
-    padding-top: 10px;
+    padding-top: 50px;
     background-color: #FFFACD;
 }
 
@@ -53,9 +53,9 @@ section#produto{
 	height: 480px;
 }
 
-.navbar{
+/*.navbar{
     height: 58px;
-}
+}*/
 
 .page-header{
     background-color: #A52A2A;
