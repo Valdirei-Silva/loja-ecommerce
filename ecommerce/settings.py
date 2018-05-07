@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=False, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com', 'iansadobale.com.br']
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com', '.iansadobale.com.br']
 
 
 INSTALLED_APPS = [
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+#PLugins adicionais
     'easy_thumbnails',
     'widget_tweaks',
 #Aplicações do projeto
@@ -133,18 +133,19 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 
 #update database configuration with $DATABASE_URL
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 #Email
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'webmaster@iansadobale.com.br'
+DEFAULT_FROM_EMAIL = 'contato@iansadobale.com.br'
 
 
 # Thumbnails
